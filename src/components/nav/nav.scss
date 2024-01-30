@@ -1,0 +1,206 @@
+.full-container {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(#408ec6, #1e2761);
+    overflow: hidden;
+
+
+    .background-unit {
+        position: absolute;
+        width: 0px;
+        opacity: 1;
+        background-color: white;
+        box-shadow: #1e2761 1px 1px 20px 2px;
+        top: 100vh;
+        bottom: 0px;
+        opacity: 0;
+        margin: auto;
+    }
+}
+
+@mixin floatUp($duration, $scale: 1.0, $left: 0) {
+    animation: floatUp $duration infinite linear;
+    transform: scale($scale);
+    left: $left;
+}
+
+@keyframes floatUp {
+    0% {
+        top: 100vh;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        top: 0vh;
+        opacity: .8;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        top: -100vh;
+        opacity: 0;
+    }
+}
+
+.b0 {
+    @include floatUp(4s, 0.7, 1%);
+}
+
+.b1 {
+    @include floatUp(3s, 1, 10%);
+}
+
+.b2 {
+    @include floatUp(5s, 0.5, 20%);
+}
+
+.b3 {
+    @include floatUp(2.5s, 1.5, 30%);
+}
+
+.b4 {
+    @include floatUp(4.5s, 1.2, 40%);
+}
+
+.b5 {
+    @include floatUp(6s, 2.2, 50%);
+}
+
+.b6 {
+    @include floatUp(3s, 0.8, 60%);
+}
+
+.b7 {
+    @include floatUp(5.3s, 2.5, 70%);
+}
+
+.b8 {
+    @include floatUp(4.7s, 1.7, 80%);
+}
+
+.b9 {
+    @include floatUp(4.1s, 0.9, 90%);
+}
+
+.b10 {
+    @include floatUp(4s, 1, 99%);
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.back-left {
+    width: 50%;
+    max-height: 100vh;
+    position: relative;
+
+    .nom-prenom {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+
+        .my-name {
+            font-size: 4em;
+            font-weight: 900;
+
+        }
+    }
+
+    &.transparent {
+        background-color: transparent;
+    }
+}
+
+.back-right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .back-nav {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+
+        .p-nav-about,
+        .p-nav-works,
+        .p-nav-skills {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            text-transform: uppercase;
+            display: grid;
+            place-items: center;
+            font-size: 5em;
+            color: #1e2761;
+            font-family: "Arial Black", Gadget, sans-serif;
+            text-shadow: 0px 0px 0 rgb(22, 31, 89),
+                1px -1px 0 rgb(14, 23, 81),
+                2px -2px 0 rgb(6, 15, 73),
+                3px -3px 0 rgb(-3, 6, 64),
+                4px -4px 0 rgb(-11, -2, 56),
+                5px -5px 0 rgb(-19, -10, 48),
+                6px -6px 0 rgb(-27, -18, 40),
+                7px -7px 0 rgb(-35, -26, 32),
+                8px -8px 0 rgb(-43, -34, 24),
+                9px -9px 0 rgb(-52, -43, 15),
+                10px -10px 0 rgb(-60, -51, 7),
+                11px -11px 0 rgb(-68, -59, 0),
+                12px -12px 0 rgb(-76, -67, 0),
+                13px -13px 0 rgb(-84, -75, 0),
+                14px -14px 0 rgb(-92, -83, 0),
+                15px -15px 0 rgb(-101, -92, 0),
+                16px -16px 0 rgb(-109, -100, 0),
+                17px -17px 0 rgb(-117, -108, 0),
+                18px -18px 0 rgb(-125, -116, 0),
+                19px -19px 0 rgb(-133, -124, 0),
+                20px -20px 0 rgb(-141, -132, 0),
+                21px -21px 0 rgb(-150, -141, 0),
+                22px -22px 0 rgb(-158, -149, 0),
+                23px -23px 0 rgb(-166, -157, 0),
+                24px -24px 0 rgb(-174, -165, 0),
+                25px -25px 24px rgba(255, 255, 255, 0.3),
+                25px -25px 1px rgba(255, 255, 255, 0.5),
+                0px 0px 24px rgba(255, 255, 255, .2);
+
+            &:hover {
+                font-size: 6em;
+                cursor: pointer;
+            }
+        }
+
+        /*.p-nav-works:hover {
+            background: radial-gradient(circle farthest-corner at bottom center, #ff5f13 0%, #271c18 80%);
+        }
+
+        .p-nav-about:hover {
+            background: radial-gradient(ellipse farthest-corner at bottom center, #ff5f13 0%, #271c18 45%);
+        }
+
+        .p-nav-skills:hover {
+            background: radial-gradient(circle farthest-corner at top center, #ff5f13 0%, #271c18 80%);
+        }*/
+
+    }
+
+
+}
